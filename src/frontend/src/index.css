@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;800&family=Figtree:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 96% 0.015 90;
+    --foreground: 30% 0.08 140;
+
+    --card: 100% 0 0;
+    --card-foreground: 30% 0.08 140;
+
+    --popover: 100% 0 0;
+    --popover-foreground: 30% 0.08 140;
+
+    --primary: 55% 0.12 40;
+    --primary-foreground: 96% 0.012 80;
+
+    --secondary: 93% 0.04 130;
+    --secondary-foreground: 30% 0.08 140;
+
+    --muted: 92% 0.025 75;
+    --muted-foreground: 50% 0.05 140;
+
+    --accent: 55% 0.1 125;
+    --accent-foreground: 96% 0.012 80;
+
+    --destructive: 50% 0.2 25;
+    --destructive-foreground: 96% 0.012 80;
+
+    --border: 89% 0.02 80;
+    --input: 89% 0.02 80;
+    --ring: 55% 0.12 40;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --hero-bg: 93% 0.04 130;
+    --header-bg: 96% 0.015 90;
+    --olive: 55% 0.1 125;
+    --terracotta: 55% 0.12 40;
+    --deep-green: 30% 0.08 140;
+    --body-text: 32% 0.04 150;
+    --feature-bg: 92% 0.025 75;
+    --cream: 96% 0.012 80;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: "Fraunces", serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Progress bar override */
+[role="progressbar"] > div {
+  background-color: oklch(var(--terracotta));
+}
+
+/* Smooth transitions */
+.quiz-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.quiz-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
